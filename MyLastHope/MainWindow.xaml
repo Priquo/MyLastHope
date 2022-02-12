@@ -1,0 +1,20 @@
+﻿<Window x:Class="MyLastHope.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:MyLastHope"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="450" Width="800">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="80*"/>
+            <RowDefinition Height="339*"/>
+        </Grid.RowDefinitions>
+        <DockPanel Grid.Row="0">
+            <Image x:Name="imageLogo" Source="/images/school_logo.png"/>
+            <TextBlock x:Name="textblockTitle" Text="Школа языков Леарн" Margin="15 0 0 0" FontSize="65"/>
+        </DockPanel>
+        <Frame x:Name="frm_pages" Grid.Row="1" NavigationUIVisibility="Hidden"/>
+    </Grid>
+</Window>
