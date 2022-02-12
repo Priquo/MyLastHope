@@ -60,6 +60,7 @@
                 <TextBox x:Name="textboxTitleFilter" Text="{Binding TitleFilter}" Height="20px"/>
             </GroupBox>
             <Button x:Name="buttResetSettings" Click="buttResetSettings_Click" Content="Сброс" Height="20px" Width="50px"/>
+            <Button x:Name="buttMakeService" Click="buttMakeService_Click" Content="Создать услугу" Height="20" Width="100" Margin="10 0"/>
         </StackPanel>
         <ListBox x:Name="listboxServices" ItemTemplate="{StaticResource listItem}" ItemsSource="{Binding Services}" Grid.Row="1"/>
     </Grid>

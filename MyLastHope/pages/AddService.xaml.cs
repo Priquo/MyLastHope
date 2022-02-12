@@ -1,5 +1,4 @@
-﻿using Microsoft.Win32;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -13,36 +12,37 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
-using System.Drawing;
 
 namespace MyLastHope.pages
 {
     /// <summary>
-    /// Логика взаимодействия для EditServices.xaml
+    /// Логика взаимодействия для AddService.xaml
     /// </summary>
-    public partial class EditServices : Page
+    public partial class AddService : Page
     {
-        ServiceEditor serviceEditor;
-        public EditServices(int idService)
+        public AddService()
         {
             InitializeComponent();
-            serviceEditor = new ServiceEditor(idService);
-            DataContext = serviceEditor;
+        }
+
+        private void buttAddImageFromApp_Click(object sender, RoutedEventArgs e)
+        {
+
         }
 
         private void buttAddImage_Click(object sender, RoutedEventArgs e)
         {
-            serviceEditor.AddImage();
+
         }
 
         private void saveButton_Click(object sender, RoutedEventArgs e)
         {
-            serviceEditor.SaveService();
+
         }
 
         private void buttExit_Click(object sender, RoutedEventArgs e)
         {
-            LoadPages.MainFrame.GoBack();
+
         }
     }
 }

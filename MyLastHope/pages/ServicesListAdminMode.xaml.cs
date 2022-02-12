@@ -55,6 +55,11 @@ namespace MyLastHope.pages
             }
         }
 
+        private void buttMakeService_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
         private void butt_editServ_Click(object sender, RoutedEventArgs e)
         {            
             index = listboxServices.SelectedIndex;
@@ -64,6 +69,7 @@ namespace MyLastHope.pages
             {
                 idService = loadServices.Services[index].ID_service;
                 LoadPages.MainFrame.Navigate(new EditServices(idService));
+                listboxServices.Items.Refresh();
             }            
         }
     }

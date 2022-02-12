@@ -82,6 +82,9 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
+    <Compile Include="pages\AddService.xaml.cs">
+      <DependentUpon>AddService.xaml</DependentUpon>
+    </Compile>
     <Compile Include="pages\EditServices.xaml.cs">
       <DependentUpon>EditServices.xaml</DependentUpon>
     </Compile>
@@ -91,6 +94,7 @@
     <Compile Include="pages\ServicesListAdminMode.xaml.cs">
       <DependentUpon>ServicesListAdminMode.xaml</DependentUpon>
     </Compile>
+    <Compile Include="ServiceEditor.cs" />
     <Compile Include="Services.cs">
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
@@ -110,6 +114,10 @@
       <DependentUpon>MainWindow.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
+    <Page Include="pages\AddService.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="pages\EditServices.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
