@@ -35,29 +35,37 @@ namespace MyLastHope.pages
         private void butt_delServ_Click(object sender, RoutedEventArgs e)
         {
             index = listboxServices.SelectedIndex;
-            idService = loadServices.Services[index].ID_service;
-            if (listboxServices.SelectedItem != null)
+            if (index == -1)
+                MessageBox.Show("Выберите услугу");
+            else
             {
-                List<ServiceToClients> a = BaseConnect.BaseModel.ServiceToClients.Where(x => x.ID_service == idService).ToList();
-                if (a.Count == 0)
+                idService = loadServices.Services[index].ID_service;
+                if (listboxServices.SelectedItem != null)
                 {
-                    BaseConnect.BaseModel.Services.Remove(loadServices.Services[listboxServices.SelectedIndex]);
-                    BaseConnect.BaseModel.SaveChanges();
+                    List<ServiceToClients> a = BaseConnect.BaseModel.ServiceToClients.Where(x => x.ID_service == idService).ToList();
+                    if (a.Count == 0)
+                    {
+                        BaseConnect.BaseModel.Services.Remove(loadServices.Services[listboxServices.SelectedIndex]);
+                        BaseConnect.BaseModel.SaveChanges();
+                        MessageBox.Show("Успешное удаление");
+                        listboxServices.Items.Refresh();
+                    }
+                    else
+                    {
+                        MessageBox.Show("Нельзя удалить услугу. Существуют зависимости");
+                    }
                 }
                 else
                 {
-                    MessageBox.Show("Нельзя удалить услугу. Существуют зависимости");
+                    MessageBox.Show("Выберите услугу!");
                 }
-            }
-            else
-            {
-                MessageBox.Show("Выберите услугу!");
             }
         }
 
         private void buttMakeService_Click(object sender, RoutedEventArgs e)
         {
-
+            LoadPages.MainFrame.Navigate(new AddService());
+            listboxServices.Items.Refresh();
         }
 
         private void butt_editServ_Click(object sender, RoutedEventArgs e)

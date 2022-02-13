@@ -20,9 +20,11 @@ namespace MyLastHope.pages
     /// </summary>
     public partial class AddService : Page
     {
+        ServiceEditor serviceEditor = new ServiceEditor();
         public AddService()
         {
             InitializeComponent();
+            DataContext = serviceEditor;
         }
 
         private void buttAddImageFromApp_Click(object sender, RoutedEventArgs e)
@@ -32,17 +34,17 @@ namespace MyLastHope.pages
 
         private void buttAddImage_Click(object sender, RoutedEventArgs e)
         {
-
+            serviceEditor.AddImage();
         }
 
         private void saveButton_Click(object sender, RoutedEventArgs e)
         {
-
+            serviceEditor.SaveService();
         }
 
         private void buttExit_Click(object sender, RoutedEventArgs e)
         {
-
+            LoadPages.MainFrame.GoBack();
         }
     }
 }
