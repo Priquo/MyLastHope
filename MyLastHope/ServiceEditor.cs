@@ -59,7 +59,7 @@ namespace MyLastHope
             service = BaseConnect.BaseModel.Services.FirstOrDefault(x => x.ID_service == idService);
         }
         private string CheckTitle(string Title)
-        {            
+        {
             if (isNewService)
             {
                 if(list.Contains(list.FirstOrDefault(x => x.Title == Title)))
@@ -69,7 +69,7 @@ namespace MyLastHope
                 }
             }
             else
-            {                
+            {
                 if (list.Contains(list.FirstOrDefault(x => x.Title == Title || x.ID_service != service.ID_service)))
                 {
                     MessageBox.Show("Услуга с таким же названием уже существует");
@@ -108,16 +108,6 @@ namespace MyLastHope
         {
             if (isNewService)
                 BaseConnect.BaseModel.Services.Add(service);
-            //    service = new Services()
-            //    {
-            //        ID_service = list.Last().ID_service + 1,
-            //        Title = Title,
-            //        Description = null,
-            //        DurationInSeconds = Convert.ToInt32(DurationInSeconds),
-            //        Cost = Convert.ToDouble(Cost),
-            //        Discount = Convert.ToDouble(Discount),
-            //        MainImagePath = MainImagePath
-            //    };
             BaseConnect.BaseModel.SaveChanges();
             MessageBox.Show("Сохранено успешно");
         }

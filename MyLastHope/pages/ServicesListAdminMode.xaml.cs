@@ -68,6 +68,23 @@ namespace MyLastHope.pages
             listboxServices.Items.Refresh();
         }
 
+        private void buttAddServiceToClient_Click(object sender, RoutedEventArgs e)
+        {
+            index = listboxServices.SelectedIndex;
+            if (index == -1)
+                MessageBox.Show("Выберите услугу");
+            else
+            {
+                idService = loadServices.Services[index].ID_service;
+                LoadPages.MainFrame.Navigate(new AddServiceToClients(idService));
+            }
+        }
+
+        private void buttCloseService_Click(object sender, RoutedEventArgs e)
+        {
+            LoadPages.MainFrame.Navigate(new CloseService());
+        }
+
         private void butt_editServ_Click(object sender, RoutedEventArgs e)
         {            
             index = listboxServices.SelectedIndex;
